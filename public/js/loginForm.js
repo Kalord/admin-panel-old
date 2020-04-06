@@ -1,5 +1,11 @@
-$('.login-submit').click(() => {
-    if(!getValidationRulesLoginForm()) return false;
+$('.login-submit').click((event) => {
+    event.preventDefault();
 
-    return false;
+    let validationRules = getValidationRulesLoginForm();
+    let errorMessages   = getErrorMessageLoginForm();
+    let result          = runValidation(validationRules, errorMessages);
+
+    if(!result) return false;
+
+    authUser(new FormData(contact));
 });
