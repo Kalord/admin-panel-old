@@ -10,11 +10,9 @@ class StartSessionRequest extends FormRequest
     public function messages()
     {
         return [
-            'user.required'     => 'Неверный логин или пароль',
-
-            'verify_email.same' => 'Почта не подтверждена',
-
-            'status'            => 'Заблокирован'
+            'user.required'   => 'Неверный логин или пароль',
+            'verify_email.*'  => 'Почта не подтверждена',
+            'status.*'        => 'Заблокирован'
         ];
     }
 
@@ -25,7 +23,7 @@ class StartSessionRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     protected function prepareForValidation()
