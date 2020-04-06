@@ -17,5 +17,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
     <script src="/js/validator.js"></script>
+    <script src="/js/validationRules/login.js"></script>
+    <script src="/js/loginForm.js"></script>
 </body>
 </html>

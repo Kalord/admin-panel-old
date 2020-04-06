@@ -13,7 +13,7 @@
                 <input id="password" placeholder="Password" type="password" data-validation="true" required>
             </fieldset>
             <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Авторизоваться</button>
+                <button class="login-submit" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Авторизоваться</button>
             </fieldset>
             <p class="copyright"><a href="/registration" data-validation="onstart">Регистрация</a></p>
         </form>
