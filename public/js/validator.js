@@ -33,7 +33,7 @@ const runValidation = (rules) => {
           let validators = rules[rule];
 
           for(let validator in validators) {
-
+              console.log(validator);
           }
       }
 };
