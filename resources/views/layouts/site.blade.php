@@ -8,6 +8,7 @@
     <title>@yield('title')</title>
 
     <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/validator.css">
 </head>
 <body>
     @yield('content')
@@ -16,7 +17,16 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
+    <script src="/js/common.js"></script>
     <script src="/js/validator.js"></script>
+
+    <script src="/js/ajax/registrationUser.js"></script>
+    <script src="/js/ajax/authUser.js"></script>
+
+    <script src="/js/validationRules/registration.js"></script>
+    <script src="/js/registrationForm.js"></script>
+
+
     <script src="/js/validationRules/login.js"></script>
     <script src="/js/loginForm.js"></script>
 </body>
