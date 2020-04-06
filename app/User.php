@@ -23,7 +23,8 @@ class User extends Authenticatable
     public const VERIFY_EMAIL = 1;
 
     public const STATUS_BANNED = 0;
-    public const STATUS_ACTIVE = 1;
+    public const STATUS_DELETE = 1;
+    public const STATUS_ACTIVE = 2;
 
     /**
      * The attributes that are mass assignable.
@@ -61,6 +62,18 @@ class User extends Authenticatable
     {
         return self::where('login', $login)->
                      where('password', Hash::make($password))->
-                     find();
+                     first();
+    }
+
+    /**
+     * @param int $id
+     * @return bool
+     **/
+    public static function deleteUser($id)
+    {
+        if(!$user = self::find($id)) return false;
+
+        $user->status = self::STATUS_DELETE;
+        return $user->save();
     }
 }
