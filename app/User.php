@@ -2,15 +2,28 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
+/**
+ * Class User
+ *
+ * @property int $verify_email
+ * @property int $status
+ *
+ * @package App
+ */
 class User extends Authenticatable
 {
     use Notifiable;
 
     protected $table = '_admin_user';
+
+    public const VERIFY_EMAIL = 1;
+
+    public const STATUS_BANNED = 0;
+    public const STATUS_ACTIVE = 1;
 
     /**
      * The attributes that are mass assignable.
@@ -38,4 +51,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * @param string $login
+     * @param string $password
+     * @return User|null
+     */
+    public static function findUser($login, $password)
+    {
+        return self::where('login', $login)->
+                     where('password', Hash::make($password))->
+                     find();
+    }
 }
