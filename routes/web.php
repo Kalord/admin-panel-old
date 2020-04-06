@@ -18,4 +18,12 @@ Route::get('/', function () {
 });
 
 Route::get('/login', 'SiteController@login')->middleware('guest');;
-Route::get('/registration', 'SiteController@registration')->middleware('guest');;
+Route::get('/registration', 'SiteController@registration')->middleware('guest');
+
+Route::group(['prefix' => '/session'], function() {
+    Route::post('start', 'SessionController@start')->middleware('guest');
+});
+
+Route::group(['prefix' => '/user'], function() {
+    Route::post('create', 'UserController@create')->middleware('guest');
+});
