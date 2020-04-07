@@ -27,3 +27,7 @@ Route::group(['prefix' => '/session'], function() {
 Route::group(['prefix' => '/user'], function() {
     Route::post('create', 'UserController@create')->middleware('guest');
 });
+
+Route::group(['prefix' => '/module'], function() {
+    Route::get('board', 'BoardController@index')->middleware('auth');
+});
