@@ -49,7 +49,8 @@ return [
         ],
 
         'mailgun' => [
-            'transport' => 'mailgun',
+            'domain' => '',
+            'secret' => '',
         ],
 
         'postmark' => [
