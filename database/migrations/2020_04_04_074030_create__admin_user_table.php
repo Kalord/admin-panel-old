@@ -39,9 +39,9 @@ class CreateAdminUserTable extends Migration
             'login'         => 'dev001',
             'password'      => Hash::make('HNJSQ4LmgA'),
             'email'         => 'artem.tyutnev.developer@gmail.com',
-            'verify_email'  => 1,
+            'verify_email'  => User::VERIFY_EMAIL,
             'token'         => Hash::make(time()),
-            'status'        => 1
+            'status'        => User::STATUS_ACTIVE
         ]);
     }
 
