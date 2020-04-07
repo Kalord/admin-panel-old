@@ -53,8 +53,8 @@ class StartSessionRequest extends FormRequest
 
         return [
             'user'         => 'required',
-            'verify_email' => "required|same:$isVerifyEmail",
-            'status'       => "required|same:$activeStatus"
+            'verify_email' => "required|in:$isVerifyEmail",
+            'status'       => "required|in:$activeStatus"
         ];
     }
 }
