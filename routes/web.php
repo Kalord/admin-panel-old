@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SiteController@index')->middleware('auth');
 
-Route::get('/login', 'SiteController@login')->middleware('guest');;
+Route::get('/login', 'SiteController@login')->name('login')->middleware('guest');
 Route::get('/registration', 'SiteController@registration')->middleware('guest');
+
+Route::get('/logout', 'SessionController@stop')->middleware('auth');
 
 Route::group(['prefix' => '/session'], function() {
     Route::post('start', 'SessionController@start')->middleware('guest');
