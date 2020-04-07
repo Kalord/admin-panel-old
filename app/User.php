@@ -60,9 +60,12 @@ class User extends Authenticatable
      */
     public static function findUser($login, $password)
     {
-        return self::where('login', $login)->
-                     where('password', Hash::make($password))->
+        $user = self::where('login', $login)->
                      first();
+
+        if(is_null($user)) return null;
+
+        return Hash::check($password, $user->password) ? $user : null;
     }
 
     /**
