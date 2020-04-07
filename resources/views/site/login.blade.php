@@ -15,6 +15,9 @@
             <fieldset>
                 <button class="login-submit" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Авторизоваться</button>
             </fieldset>
+            <div class="error-message alert alert-danger" style="display: none;">
+                Ошибка
+            </div>
             {{ csrf_field() }}
             <p class="copyright"><a href="/registration" data-validation="onstart">Регистрация</a></p>
         </form>

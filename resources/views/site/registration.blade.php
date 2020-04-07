@@ -22,8 +22,15 @@
                 <input id="password_confirmation" name="password_confirmation" placeholder="Password confirmation" type="password" tabindex="2" required>
             </fieldset>
             <fieldset>
-                <button class="registration-submit" name="registration-submit" type="submit" id="contact-submit" data-submit="...Sending">Регистрацияя</button>
+                <button class="registration-submit" name="registration-submit" type="submit" id="contact-submit" data-submit="...Sending">Регистрация</button>
             </fieldset>
+            <div class="success-message alert alert-success" style="display: none;">
+                Ожидайте подтверждения
+            </div>
+
+            <div class="error-message alert alert-danger" style="display: none;">
+                Ошибка
+            </div>
             {{ csrf_field() }}
             <p class="copyright"><a href="/login">Авторизация</a></p>
         </form>
