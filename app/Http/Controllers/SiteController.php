@@ -8,7 +8,7 @@ class SiteController extends Controller
 {
     public function index()
     {
-        var_dump('Hello, World!');
+        return view('panel/home');
     }
 
     public function login()
