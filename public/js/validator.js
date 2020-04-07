@@ -70,6 +70,9 @@ const runValidation = (rules, messages = {}) => {
 
           for(let validator in validators) {
               let params = validators[validator];
+
+              if(typeof params != 'object') continue;
+
               params.insert(0, `'${validateElement.val()}'`);
               params = params.join(', ');
 
