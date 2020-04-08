@@ -38,6 +38,8 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="/assets/stylesheets/theme-custom.css">
 
+    <link rel="stylesheet" href="/css/board.css">
+
     <!-- Head Libs -->
     <script src="/assets/vendor/modernizr/modernizr.js"></script>
 </head>
@@ -428,7 +430,12 @@
             <!-- Theme Initialization Files -->
             <script src="/assets/javascripts/theme.init.js"></script>
 
+            <!-- API -->
+            <script src="/js/ajax/api/common.js"></script>
+            <script src="/js/ajax/api/project.js"></script>
 
             <!-- Examples -->
             <script src="/assets/javascripts/dashboard/examples.dashboard.js"></script>
+
+            <script src="/js/project.js"></script>
 </body>

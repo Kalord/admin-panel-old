@@ -412,90 +412,20 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr style="cursor: pointer">
-                                <td>1</td>
-                                <td>Porto - Responsive HTML5 Template</td>
-                                <td><span class="label label-success">Success</span></td>
-                                <td>
-                                    <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                                            100%
+                                @foreach($projects as $project)
+                                <tr class="project-item {{$project->isSelected() ? 'selected-project' : ''}}" data-id="{{$project->id}}" style="cursor: pointer">
+                                    <td>{{$project->id}}</td>
+                                    <td>{{$project->title}}</td>
+                                    <td><span class="label label-success">Success</span></td>
+                                    <td>
+                                        <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
+                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                                100%
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Porto - Responsive Drupal 7 Theme</td>
-                                <td><span class="label label-success">Success</span></td>
-                                <td>
-                                    <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                                            100%
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Tucson - Responsive HTML5 Template</td>
-                                <td><span class="label label-warning">Warning</span></td>
-                                <td>
-                                    <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                            60%
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Tucson - Responsive Business WordPress Theme</td>
-                                <td><span class="label label-success">Success</span></td>
-                                <td>
-                                    <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                                            90%
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Porto - Responsive Admin HTML5 Template</td>
-                                <td><span class="label label-warning">Warning</span></td>
-                                <td>
-                                    <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                                            45%
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Porto - Responsive HTML5 Template</td>
-                                <td><span class="label label-danger">Danger</span></td>
-                                <td>
-                                    <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                                            40%
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Porto - Responsive Drupal 7 Theme</td>
-                                <td><span class="label label-success">Success</span></td>
-                                <td>
-                                    <div class="progress progress-sm progress-half-rounded mt-xs light">
-                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-                                            95%
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
