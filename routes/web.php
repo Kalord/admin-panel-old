@@ -30,4 +30,5 @@ Route::group(['prefix' => '/user'], function() {
 
 Route::group(['prefix' => '/module'], function() {
     Route::get('board', 'BoardController@index')->middleware('auth');
+    Route::get('project', 'ProjectController@index')->middleware('auth');
 });
