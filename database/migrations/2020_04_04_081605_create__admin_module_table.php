@@ -29,6 +29,11 @@ class CreateAdminModuleTable extends Migration
             'title' => 'board',
             'description' => 'Basic statistics'
         ]);
+
+        Module::create([
+            'title' => 'project',
+            'description' => 'Project manager'
+        ]);
     }
 
     /**
