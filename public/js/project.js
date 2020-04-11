@@ -1,8 +1,7 @@
 $('.project-item').click((event) => {
     let projectItem = $(event.target);
 
-    while(!projectItem.attr('data-id'))
-    {
+    while (!projectItem.attr('data-id')) {
         projectItem = projectItem.parent();
     }
 
