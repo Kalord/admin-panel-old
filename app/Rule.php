@@ -11,4 +11,15 @@ class Rule extends Model
     protected $fillable = [
         'title', 'description', 'id_creator'
     ];
+
+    /**
+     * Получение названия роли по идентификатору
+     * 
+     * @param int $id_rule
+     * @return string
+     */
+    public static function getTitleByIdRule($id_rule)
+    {
+        return self::find($id_rule)->title;
+    }
 }
