@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use App\Rule;
 
 /**
  * Class User
@@ -52,6 +53,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Получение названия роли пользователя
+     */
+    public function getTitleByIdRule()
+    {
+        return Rule::getTitleByIdRule($this->id_rule);
+    }
 
     /**
      * @param string $login
