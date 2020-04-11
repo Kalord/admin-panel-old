@@ -229,11 +229,11 @@
 
                             <div class="widget-profile-info">
                                 <div class="profile-picture">
-                                    <img src="/assets/images/!logged-user.jpg">
+                                    <img src="/{{Auth()->user()->avatar}}">
                                 </div>
                                 <div class="profile-info">
-                                    <h4 class="name text-weight-semibold">John Doe</h4>
-                                    <h5 class="role">Administrator</h5>
+                                    <h4 class="name text-weight-semibold">{{Auth()->user()->name}}</h4>
+                                    <h5 class="role">{{Auth()->user()->getTitleByIdRule()}}</h5>
                                     <div class="profile-footer">
                                         <a href="#">(edit profile)</a>
                                     </div>
