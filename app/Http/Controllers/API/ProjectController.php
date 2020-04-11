@@ -9,6 +9,15 @@ use App\Project;
 class ProjectController extends Controller
 {
     /**
+     * Создание проекта
+     * @method POST
+     */
+    public function create(Request $request)
+    {
+
+    }
+
+    /**
      * Изменение текущего выбраного проекта
      * @method PATCH
      **/
