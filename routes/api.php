@@ -20,4 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => '/module'], function() {
     Route::patch('project/selected', '\App\Http\Controllers\API\ProjectController@changeSelectedProject');
+
+
+    Route::post('project/create', '\App\Http\Controllers\API\ProjectController@create');
 });
